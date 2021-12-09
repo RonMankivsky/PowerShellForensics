@@ -1,8 +1,9 @@
-﻿try {
+try {
     Import-Module ImportExcel
 }
 catch{
-Write-Host "Open as admin and install the following module:            Install-Module -Name ImportExcel"
+Write-Host "Installing Module"
+Install-Module -Name ImportExcel
 }
 
 
@@ -35,7 +36,7 @@ $installsig | Export-Excel -Path $DesktopPath -AutoSize -TableName Processes4 -W
 $uninstall | Export-Excel -Path $DesktopPath -AutoSize -TableName Processes5 -WorksheetName Extentions_Uninstall
 $crashes | Export-Excel -Path $DesktopPath -AutoSize -TableName Processes6 -WorksheetName ChromeCrashes
 
-GetChromeHistory | Export-Excel -Path $DesktopPath -AutoSize -TableName Processes7 -WorksheetName ChromeHistory
+GetChromeHistory | Export-Excel -Path $DesktopPath -AutoSize -TableName Processes7 -WorksheetName GetChromeHistory
 
 Write-Host("File saved at: " + $DesktopPath )
 
